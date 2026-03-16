@@ -16,6 +16,14 @@
 }
 
 @font-face {
+  font-family: 'DM Mono';
+  src: url('/fonts/DMMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Source Sans 3';
   src: url('/fonts/SourceSans3-Regular.woff2') format('woff2');
   font-weight: 400;
@@ -95,6 +103,8 @@ ul, ol {
   max-width: var(--body-width);
   margin-left: auto;
   margin-right: auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
 }
 
 .divider {
@@ -106,18 +116,18 @@ ul, ol {
 }
 
 
-/* ── TYPOGRAPHY ── */
+/* ── TYPOGRAPHY (fluid) ── */
 h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
   line-height: 1.2;
   color: var(--color-white);
 }
 
 h2 {
   font-family: var(--font-mono);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: var(--color-crail);
@@ -126,15 +136,15 @@ h2 {
 h3 {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(20px, 3vw, 24px);
   line-height: 1.3;
   color: var(--color-white);
 }
 
 h4 {
   font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: clamp(14px, 2vw, 16px);
   line-height: 24px;
   color: var(--color-crail);
 }
@@ -183,7 +193,7 @@ h5 {
 
 /* ── HERO ── */
 .hero {
-  padding: 64px 24px 48px;
+  padding: clamp(40px, 8vw, 64px) 0 clamp(32px, 6vw, 48px);
 }
 
 .hero h1 {
@@ -191,7 +201,7 @@ h5 {
 }
 
 .hero h2 {
-  margin-bottom: 24px;
+  margin-bottom: clamp(16px, 3vw, 24px);
 }
 
 .hero p {
@@ -201,21 +211,34 @@ h5 {
 
 /* ── PROJECT CARDS ── */
 .projects {
-  padding: 48px 24px;
+  padding: clamp(32px, 6vw, 48px) 0;
 }
 
 .project {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 32px;
+  grid-template-rows: auto 1fr;
+  gap: clamp(16px, 3vw, 32px);
   align-items: start;
 }
 
 .project + .project {
-  margin-top: 64px;
+  margin-top: clamp(40px, 8vw, 64px);
+}
+
+/*
+ * Desktop grid placement:
+ * The header and desc sit in the text column,
+ * the image spans both rows in the image column.
+ */
+.project-header {
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .project-image {
+  grid-column: 1;
+  grid-row: 1 / -1;
   background-color: var(--color-near-black);
   border-radius: 6px;
   aspect-ratio: 4 / 3;
@@ -228,12 +251,17 @@ h5 {
   object-fit: cover;
 }
 
-.project-text h3 {
+.project-desc {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.project-header h3 {
   margin-bottom: 4px;
 }
 
-.project-text h4 {
-  margin-bottom: 16px;
+.project-header h4 {
+  margin-bottom: 0;
 }
 
 /* Flipped card: image on right, text on left */
@@ -241,19 +269,25 @@ h5 {
   grid-template-columns: 2fr 1fr;
 }
 
-.project--flipped .project-image {
-  order: 2;
+.project--flipped .project-header {
+  grid-column: 1;
+  text-align: right;
 }
 
-.project--flipped .project-text {
-  order: 1;
+.project--flipped .project-image {
+  grid-column: 2;
+}
+
+.project--flipped .project-desc {
+  grid-column: 1;
   text-align: right;
 }
 
 
 /* ── PARTNERS ── */
+
 .partners {
-  padding: 48px 24px;
+  padding: clamp(32px, 6vw, 48px) 0;
 }
 
 .partners h5:first-child {
@@ -266,23 +300,37 @@ h5 {
 
 .partner-logos {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin: 32px 0;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin: clamp(20px, 4vw, 32px) 0;
+  padding: 0 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
 }
 
-.partner-logo-placeholder {
-  width: 80px;
+.partner-logos::-webkit-scrollbar {
+  display: none;
+}
+
+.partner-logos li {
+  flex-shrink: 0;
+  padding: 0 12px;
+}
+
+.partner-logo {
   height: 48px;
-  background-color: var(--color-near-black);
-  border-radius: 4px;
+  width: auto;
+  display: block;
 }
 
 
 /* ── CONTACT ── */
 .contact {
-  padding: 48px 24px;
+  padding: clamp(32px, 6vw, 48px) 0;
 }
 
 .contact p {
@@ -292,17 +340,17 @@ h5 {
 
 /* ── IMPRINT ── */
 .imprint {
-  padding: 48px 24px 64px;
+  padding: clamp(32px, 6vw, 48px) 0 clamp(40px, 8vw, 64px);
 }
 
 .imprint h5 {
-  margin-bottom: 24px;
+  margin-bottom: clamp(16px, 3vw, 24px);
 }
 
 .imprint-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 32px;
+  gap: clamp(16px, 3vw, 32px);
 }
 
 .imprint-col strong {
@@ -318,4 +366,50 @@ h5 {
 .imprint-col a {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+
+/* responsive 768 */
+
+@media (max-width: 768px) {
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Mobile card order: header (1) → image (2) → desc (3) */
+  .project-header { order: 1; }
+  .project-image  { order: 2; aspect-ratio: 16 / 9; }
+  .project-desc   { order: 3; }
+
+  /* Reset flipped text alignment — everything left-aligned stacked */
+  .project--flipped .project-header,
+  .project--flipped .project-desc {
+    text-align: left;
+  }
+
+  .project-header h4 {
+    margin-bottom: 4px;
+  }
+}
+
+
+/* responsive 480 */
+
+@media (max-width: 480px) {
+
+  .imprint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-logo {
+    height: 38px;
+  }
+
+  .partners h5:first-child,
+  .partners h5:last-child {
+    text-align: center;
+  }
 }
