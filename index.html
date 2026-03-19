@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <!-- ═══ HERO ═══ -->
+    <!-- hero -->
     <section class="hero">
       <div class="body-width">
         <h1>Fabian Dietrich</h1>
@@ -28,7 +28,7 @@
 
     <hr class="divider" />
 
-    <!-- ═══ BUILT & DEPLOYED ═══ -->
+    <!-- full build projects -->
     <section class="projects">
 
       <article class="project body-width">
@@ -37,7 +37,10 @@
           <h4>Staff scheduling that empowers your team</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Shifty app screenshot" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/shifty-mobile.png" />
+            <img src="/images/shifty-desktop.png" alt="Shifty app screenshot" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>A straightforward scheduling tool for small businesses managing flexible working hours. Admins assign shifts, employees claim slots and swap amongst themselves. Built on the MERN stack, deployed on self-managed infrastructure.</p>
@@ -50,7 +53,10 @@
           <h4>Effortless restaurant table reservations</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Taebl app screenshot" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/taebl-mobile.png" />
+            <img src="/images/taebl-desktop.png" alt="Taebl app screenshot" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>A reservations management tool for small restaurants, designed for on-premise use. Hosts see availabilities at a glance and confirm bookings in real time. Exposes clean API endpoints for optional integration with customer-facing booking forms.</p>
@@ -63,7 +69,10 @@
           <h4>A browser game with simple mechanics</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Slice Rider game screenshot" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/slicerider-mobile.png" />
+            <img src="/images/slicerider-desktop.png" alt="Slice Rider game screenshot" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>Pizza, cookies, a race against the clock. Built in vanilla JavaScript for the Ironhack bootcamp. No frameworks, just a clean game loop and a good excuse to waste five minutes.</p>
@@ -74,16 +83,16 @@
 
     <hr class="divider" />
 
-    <!-- ═══ PARTNERS ═══ -->
+    <!-- partners -->
     <section class="partners">
       <div class="body-width">
         <h5>I have had the pleasure of working with</h5>
         <ul class="partner-logos">
-          <li><img src="/logos/01-TNLA-light.png" alt="TNLA" class="partner-logo" /></li>
-          <li><img src="/logos/02-BS7-light.png" alt="Backslash7" class="partner-logo" /></li>
-          <li><img src="/logos/03-TS-light.png" alt="Tagesspiegel" class="partner-logo" /></li>
-          <li><img src="/logos/04-ASH-light.png" alt="ASH Berlin" class="partner-logo" /></li>
-          <li><img src="/logos/05-FHP-light.png" alt="FH Potsdam" class="partner-logo" /></li>
+          <li><img src="/logos/01b-TNLA-light.png" alt="TNLA" class="partner-logo" /></li>
+          <li><img src="/logos/02b-BS7-light.png" alt="Backslash7" class="partner-logo" /></li>
+          <li><img src="/logos/03b-TS-light.png" alt="Tagesspiegel" class="partner-logo" /></li>
+          <li><img src="/logos/04b-ASH-light.png" alt="ASH Berlin" class="partner-logo" /></li>
+          <li><img src="/logos/05b-FHP-light.png" alt="FH Potsdam" class="partner-logo" /></li>
         </ul>
         <h5>and other brands navigating an increasingly digital reality</h5>
       </div>
@@ -91,10 +100,10 @@
 
     <hr class="divider" />
 
-    <!-- ═══ CONTACT ═══ -->
+    <!-- interlude -->
     <section class="contact">
       <div class="body-width">
-        <p>I help organizations identify operational challenges, turn them into design solutions, and build the software to implement them. Whether embedded in a team or working independently, I get up to speed quickly and focus on outcomes that matter to users</p>
+        <p>I help organizations identify operational challenges, turn them into design solutions, and build the software to implement them. Whether embedded in a team or working independently, I get up to speed quickly and focus on outcomes that matter to users.</p>
         <div class="cta-row">
           <a href="mailto:email@email.em" class="cta">Work With Me</a>
           <a href="https://github.com/fabian-dietrich" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
@@ -109,7 +118,7 @@
 
     <hr class="divider" />
 
-    <!-- ═══ RESEARCH & DESIGN ═══ -->
+    <!-- r&d projects -->
     <section class="projects">
 
       <article class="project project--flipped body-width">
@@ -118,7 +127,10 @@
           <h4>Visualisation of complex data</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Pools of Privilege visualisation" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/pools-mobile.png" />
+            <img src="/images/pools-desktop.png" alt="Pools of Privilege visualisation" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>A collaborative investigation into climate injustice in Berlin for the Urban Complexity Lab. Mapping access to bathing spots against urban heat data and population density, with ML-assisted analysis of aerial photography. Findings published by Tagesspiegel.</p>
@@ -128,10 +140,13 @@
       <article class="project body-width">
         <div class="project-header">
           <h3>Security Operations UX</h3>
-          <h4>Internship Project at Backslash7</h4>
+          <h4>Internship project at Backslash7</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Security Operations UX" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/secops-mobile.png" />
+            <img src="/images/secops-desktop.png" alt="Security Operations UX" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>UX research and interface design for a security management platform used at large-scale events. Focused on bridging developer priorities and real-world operator needs through design guidelines and testing procedures.</p>
@@ -141,10 +156,13 @@
       <article class="project project--flipped body-width">
         <div class="project-header">
           <h3>Independent Print in the Digital Age</h3>
-          <h4>BA Thesis — Interface Design</h4>
+          <h4>Bachelor's thesis — Interface Design</h4>
         </div>
         <div class="project-image">
-          <img src="" alt="Independent Print in the Digital Age" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/print-mobile.png" />
+            <img src="/images/print-desktop.png" alt="Independent Print in the Digital Age" />
+          </picture>
         </div>
         <div class="project-desc">
           <p>Research-driven design exploring how independent local print shops can use digital tools to strengthen operations and customer relationships. The scheduling challenges uncovered here became the foundation for Shifty.</p>
@@ -155,7 +173,8 @@
 
     <hr class="divider" />
 
-    <!-- ═══ IMPRINT ═══ -->
+    <!-- imprint -->
+
     <footer class="imprint">
       <div class="body-width">
         <h5>Impressum | Imprint</h5>
