@@ -1,15 +1,8 @@
 /* ── FONTS ── */
+
 @font-face {
   font-family: 'Fraunces';
   src: url('/fonts/Fraunces_72pt-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'DM Mono';
-  src: url('/fonts/DMMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -41,8 +34,8 @@
 
 
 /* ── TOKENS ── */
+
 :root {
-  /* Raw palette */
   --color-white:      #ffffff;
   --color-crail:      #c1553c;
   --color-dark-grey:  #343434;
@@ -51,7 +44,6 @@
   --color-light-text: #2e2e2e;
   --color-light-rule: #ddddd9;
 
-  /* Semantic tokens (dark mode default) */
   --color-bg:         var(--color-dark-grey);
   --color-text:       var(--color-white);
   --color-text-muted: var(--color-white);
@@ -78,6 +70,7 @@
 
 
 /* ── RESET ── */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -120,6 +113,7 @@ ul, ol {
 
 
 /* ── LAYOUT ── */
+
 .body-width {
   max-width: var(--body-width);
   margin-left: auto;
@@ -137,7 +131,8 @@ ul, ol {
 }
 
 
-/* ── TYPOGRAPHY (fluid) ── */
+/* ── TYPOGRAPHY ── */
+
 h1 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -180,7 +175,8 @@ h5 {
 }
 
 
-/* ── CTA BUTTON ── */
+/* ── CTA  ── */
+
 .cta {
   display: inline-block;
   font-family: var(--font-body);
@@ -225,6 +221,7 @@ h5 {
 
 
 /* ── HERO ── */
+
 .hero {
   padding: clamp(40px, 8vw, 64px) 0 clamp(32px, 6vw, 48px);
 }
@@ -243,6 +240,7 @@ h5 {
 
 
 /* ── PROJECT CARDS ── */
+
 .projects {
   padding: clamp(32px, 6vw, 48px) 0;
 }
@@ -259,11 +257,8 @@ h5 {
   margin-top: clamp(40px, 8vw, 64px);
 }
 
-/*
- * Desktop grid placement:
- * The header and desc sit in the text column,
- * the image spans both rows in the image column.
- */
+/* desktop grid placement */
+
 .project-header {
   grid-column: 2;
   grid-row: 1;
@@ -307,7 +302,8 @@ h5 {
   margin-bottom: 0;
 }
 
-/* Flipped card: image on right, text on left */
+/* alternating cards content alignment */
+
 .project--flipped {
   grid-template-columns: 2fr 1fr;
 }
@@ -372,6 +368,7 @@ h5 {
 
 
 /* ── CONTACT ── */
+
 .contact {
   padding: clamp(32px, 6vw, 48px) 0;
 }
@@ -382,6 +379,7 @@ h5 {
 
 
 /* ── IMPRINT ── */
+
 .imprint {
   padding: clamp(32px, 6vw, 48px) 0 clamp(40px, 8vw, 64px);
 }
@@ -411,6 +409,203 @@ h5 {
   text-underline-offset: 3px;
 }
 
+/* ── BREADCRUMB NAV ── */
+
+.breadcrumb-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+}
+
+@media (prefers-color-scheme: light) {
+  .breadcrumb-nav li,
+  .breadcrumb-nav a {
+    color: var(--color-crail);
+  }
+}
+
+.breadcrumb-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: var(--body-width);
+  margin: 0 auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
+}
+
+.breadcrumb-nav li {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.breadcrumb-nav .breadcrumb-home {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.breadcrumb-nav .breadcrumb-sep {
+  opacity: 0.5;
+}
+
+
+/* ── SUBPAGE ── */
+
+.subpage-hero {
+  padding: clamp(24px, 4vw, 40px) 0 clamp(24px, 4vw, 40px);
+}
+
+.subpage-hero h1 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.2;
+}
+
+.subpage-content {
+  max-width: var(--body-width);
+  margin: 0 auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
+  padding-bottom: clamp(32px, 6vw, 48px);
+}
+
+/* section headings flush left */
+
+.subpage-content .section-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 24px);
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+/* indented content block */
+
+.subpage-content .indent {
+  padding-left: 32px;
+}
+
+/* subsection headings */
+
+.subpage-content .sub-heading {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.subpage-content .question-heading {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* body paragraphs on subpage */
+
+.subpage-content p {
+  margin-bottom: 16px;
+}
+
+.subpage-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* english summary */
+.english-summary {
+  margin-top: clamp(32px, 6vw, 48px);
+  margin-bottom: 0;
+}
+
+.english-summary h2 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 24px);
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.english-summary ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.english-summary li {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+
+/* crail mono disclaimer */
+
+.disclaimer-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-crail);
+}
+
+/* all-caps block flush left */
+
+.widerspruch-heading {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.widerspruch-body {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* bulleted lists in subpage content */
+
+.subpage-content ul.legal-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.subpage-content ul.legal-list li {
+  margin-bottom: 8px;
+}
+
+/* subpage links*/
+
+.subpage-content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.quelle {
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
 
 /* responsive 768 */
 
@@ -422,19 +617,24 @@ h5 {
     gap: 12px;
   }
 
-  /* Mobile card order: header (1) → image (2) → desc (3) */
+  /* project cards content order rearranged on mobile */
+
   .project-header { order: 1; }
   .project-image  { order: 2; aspect-ratio: 16 / 9; max-width: 400px; width: 100%; margin: 8px 0; }
   .project-desc   { order: 3; }
 
-  /* Reset flipped text alignment — everything left-aligned stacked */
+  /* reset text alignment */
+
   .project--flipped .project-header,
   .project--flipped .project-desc {
     text-align: left;
   }
-
-  .project-header h4 {
+.project-header h4 {
     margin-bottom: 4px;
+  }
+
+  .subpage-content .indent {
+    padding-left: 16px;
   }
 }
 
