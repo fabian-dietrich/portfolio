@@ -745,11 +745,18 @@ h5 {
 /* ── PROJECT SCREENSHOTS ── */
 
 .project-screenshots {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: nowrap;
   gap: clamp(12px, 2vw, 20px);
   margin-top: clamp(28px, 5vw, 40px);
   margin-bottom: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-screenshots::-webkit-scrollbar {
+  display: none;
 }
 
 .screenshot-frame {
@@ -758,6 +765,7 @@ h5 {
   overflow: hidden;
   box-shadow: 0 4px 16px var(--color-shadow);
   background-color: var(--color-rule);
+  flex: 0 0 80%;
 }
 
 .screenshot-frame img {
@@ -770,6 +778,15 @@ h5 {
 
 /* ── STACK LOGOS ── */
 
+.stack-logos-bar {
+  background-color: var(--color-rule);
+  border-radius: 6px;
+  max-width: var(--hr-width);
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
 .stack-logos {
   display: flex;
   align-items: center;
@@ -777,8 +794,13 @@ h5 {
   gap: clamp(16px, 3vw, 28px);
   margin-top: 0;
   padding: clamp(16px, 3vw, 24px);
-  background-color: var(--color-rule);
-  border-radius: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.stack-logos::-webkit-scrollbar {
+  display: none;
 }
 
 .stack-logos li {
@@ -792,17 +814,12 @@ h5 {
 }
 
 @media (max-width: 768px) {
-  .project-screenshots {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-
-  .screenshot-frame {
-    aspect-ratio: 4 / 3;
-  }
-
-  .stack-logos {
-    flex-wrap: wrap;
-    gap: clamp(12px, 3vw, 20px);
+  .stack-logos-bar {
+    border-radius: 0;
+    max-width: 100%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
