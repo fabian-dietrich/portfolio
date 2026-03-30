@@ -698,6 +698,36 @@ h5 {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
+.github-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.github-links svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.github-links a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.github-links a:hover {
+  color: var(--color-crail);
+}
+
+.github-links__sep {
+  opacity: 0.4;
+}
+
 .subpage-content .section-title {
   margin-top: clamp(28px, 5vw, 40px);
   margin-bottom: 20px;
