@@ -476,7 +476,7 @@ h5 {
   margin: 0 auto;
   padding-left: clamp(16px, 4vw, 24px);
   padding-right: clamp(16px, 4vw, 24px);
-  padding-bottom: clamp(32px, 6vw, 48px);
+  padding-bottom: clamp(32px, 6vw, 0px);
 }
 
 /* section headings flush left */
@@ -602,6 +602,11 @@ h5 {
   text-underline-offset: 3px;
 }
 
+.subpage-content a.cta,
+.subpage-content a.icon-link {
+  text-decoration: none;
+}
+
 .quelle {
   font-weight: 700;
   margin-top: 32px;
@@ -656,5 +661,118 @@ h5 {
   .partners h5:first-child,
   .partners h5:last-child {
     text-align: center;
+  }
+}
+
+
+/* ── PROJECT SUBPAGE ── */
+
+.subpage-hero h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-crail);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.subpage-hero p {
+  margin-bottom: 16px;
+}
+
+.subpage-hero p:last-of-type {
+  margin-bottom: 0;
+}
+
+.cta--outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.cta--outline:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.subpage-content .section-title {
+  margin-top: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+
+.subpage-cta {
+  padding-top: clamp(28px, 5vw, 40px);
+}
+
+.subpage-cta p {
+  margin-bottom: 0;
+}
+
+
+/* ── PROJECT SCREENSHOTS ── */
+
+.project-screenshots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 2vw, 20px);
+  margin-top: clamp(28px, 5vw, 40px);
+  margin-bottom: 0;
+}
+
+.screenshot-frame {
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  background-color: var(--color-rule);
+}
+
+.screenshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ── STACK LOGOS ── */
+
+.stack-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(16px, 3vw, 28px);
+  margin-top: 0;
+  padding: clamp(16px, 3vw, 24px);
+  background-color: var(--color-rule);
+  border-radius: 6px;
+}
+
+.stack-logos li {
+  flex-shrink: 0;
+}
+
+.stack-logos img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .project-screenshots {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .screenshot-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .stack-logos {
+    flex-wrap: wrap;
+    gap: clamp(12px, 3vw, 20px);
   }
 }

@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         datenschutz: resolve(__dirname, 'datenschutz.html'),
+        shifty: resolve(__dirname, 'shifty.html'),
       },
     },
   },
