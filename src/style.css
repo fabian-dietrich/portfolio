@@ -753,6 +753,11 @@ h5 {
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
 }
 
 .project-screenshots::-webkit-scrollbar {
@@ -760,10 +765,10 @@ h5 {
 }
 
 .screenshot-frame {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 4px 16px var(--color-shadow);
+  box-shadow: 0 0 16px var(--color-shadow);
   background-color: var(--color-rule);
   flex: 0 0 80%;
 }
