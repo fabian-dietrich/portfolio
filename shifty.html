@@ -46,21 +46,19 @@
     <hr class="divider" />
 
     <!-- screenshots -->
-    <div class="subpage-content">
-      <div class="project-screenshots">
-        <div class="screenshot-frame">
-          <img src="/images/shifty-screenshot-1.png" alt="Shifty — schedule overview" />
-        </div>
-        <div class="screenshot-frame">
-          <img src="/images/shifty-screenshot-2.png" alt="Shifty — shift claim view" />
-        </div>
-        <div class="screenshot-frame">
-          <img src="/images/shifty-screenshot-3.png" alt="Shifty — swap request flow" />
-        </div>
+    <div class="project-screenshots">
+      <div class="screenshot-frame">
+        <img src="/images/shifty-screenshot-1.png" alt="Shifty — schedule overview" />
+      </div>
+      <div class="screenshot-frame">
+        <img src="/images/shifty-screenshot-2.png" alt="Shifty — shift claim view" />
+      </div>
+      <div class="screenshot-frame">
+        <img src="/images/shifty-screenshot-3.png" alt="Shifty — swap request flow" />
       </div>
     </div>
 
-    <!-- section: two-role model -->
+    <!-- section one -->
     <div class="subpage-content">
       <h3 class="section-title">Shifty operates on a two-role model</h3>
       <p>Managers create shifts, each defined by a date, start and end time, and any notes relevant to that slot. They can see which shifts are filled, which are pending, and who has claimed what. Employees log in to a view of the upcoming schedule, see open slots, and claim the ones that work for them. If plans change, they can release a shift back into the pool or initiate a swap request with a specific colleague.</p>
@@ -83,9 +81,7 @@
     </ul>
     </div>
 
-    <!-- <hr class="divider" /> -->
-
-    <!-- section: architecture -->
+    <!-- section two -->
     <div class="subpage-content">
       <h3 class="section-title">A separated architecture designed for clarity and extensibility</h3>
       <p>Shifty is built as two independent applications connected by a REST API. The backend, running on Node.js with Express 5, handles authentication, data persistence, and all business logic. MongoDB, accessed through Mongoose, stores the three core data models: users (with their role, credentials, and team membership), shifts (with timing, status, and assignment), and swap requests (with proposer, recipient, and approval state). Sessions are managed with JSON Web Tokens, and passwords are hashed with bcryptjs before storage.</p>
@@ -95,7 +91,7 @@
 
     <hr class="divider" />
 
-    <!-- section: learnings -->
+    <!-- section three -->
     <div class="subpage-content">
       <h3 class="section-title">Solving a scheduling problem via transferable patterns</h3>
       <p>Shifty grew directly out of research I had done for my BA thesis where I looked at how small independent businesses manage operational logistics. The scheduling problem was the clearest example of a common problem: tools available to a team of this size were either too simple to be useful or too complex to be adopted. The friction was obvious here and a relatively modest piece of software could make a real difference day to day.</p>
