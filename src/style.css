@@ -257,8 +257,17 @@ h5 {
   align-items: start;
 }
 
-.project + .project {
+.project + .project,
+.project-link + .project,
+.project + .project-link,
+.project-link + .project-link {
   margin-top: clamp(40px, 8vw, 64px);
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 /* desktop grid placement */
