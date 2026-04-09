@@ -805,6 +805,7 @@ h5 {
 .stack-logos {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: nowrap;
   gap: clamp(16px, 3vw, 28px);
   margin-top: 0;
