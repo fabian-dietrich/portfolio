@@ -12,6 +12,7 @@ export default defineConfig({
         datenschutz: resolve(__dirname, 'datenschutz.html'),
         shifty: resolve(__dirname, 'shifty.html'),
         taebl: resolve(__dirname, 'taebl.html'),
+        'slice-rider': resolve(__dirname, 'slice-rider.html'),
       },
     },
   },

@@ -752,6 +752,15 @@ h5 {
   margin-bottom: 0;
 }
 
+/* inline code in body text */
+
+.subpage-content code {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: inherit;
+  color: inherit;
+}
+
 
 /* ── PROJECT SCREENSHOTS ── */
 
@@ -788,6 +797,24 @@ h5 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.screenshot-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* portrait screenshot override — cap height to match video */
+
+.project-screenshots--portrait .screenshot-frame {
+  flex: 0 0 auto;
+}
+
+.project-screenshots--portrait .screenshot-frame img,
+.project-screenshots--portrait .screenshot-frame video {
+  max-height: 420px;
+  width: auto;
 }
 
 
